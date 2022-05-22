@@ -18,7 +18,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>{" "}
       </li>
       <li>
-        <Link to="/appointment">Categories</Link>{" "}
+        <Link to="/purchase">Purchase</Link>{" "}
       </li>
       <li>
         <Link to="/review">Review</Link>{" "}
@@ -29,6 +29,11 @@ const Navbar = () => {
       <li>
         <Link to="/about">About</Link>{" "}
       </li>
+      {user && (
+        <li>
+          <Link to="/dashboard">Dashboard</Link>{" "}
+        </li>
+      )}
       {user ? (
         <button
           onClick={logOut}

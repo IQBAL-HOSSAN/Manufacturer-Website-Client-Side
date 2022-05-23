@@ -8,24 +8,24 @@ const CheckoutForm = ({ order }) => {
   const elements = useElements();
   const [clientSecret, setClientSecret] = useState("");
 
-  useEffect(() => {
-    fetch("http://localhost:8000/create-payment-intent", {
-      method: "POST",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  // useEffect(() => {
+  //   fetch("http://localhost:8000/create-payment-intent", {
+  //     method: "POST",
+  //     headers: {
+  //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
 
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ price }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.clientSecret) {
-          setClientSecret(data.clientSecret);
-        }
-        console.log(data);
-      });
-  }, [price]);
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify({ price }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data?.clientSecret) {
+  //         setClientSecret(data.clientSecret);
+  //       }
+  //       console.log(data);
+  //     });
+  // }, [price]);
 
   const handleCardSubmit = async (e) => {
     e.preventDefault();
@@ -59,7 +59,7 @@ const CheckoutForm = ({ order }) => {
           onClick={handleCardSubmit}
           className="btn btn-primary btn-sm mt-4"
           type="submit"
-          disabled={!stripe || !clientSecret}
+          disabled={!stripe}
         >
           Pay
         </button>

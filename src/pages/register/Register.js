@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import auth from "../../firebase.init";
 import SocialLogin from "../../components/socialLogin/SocialLogin";
+import useToken from "../../hooks/useToken";
 const Register = () => {
   const {
     register,
@@ -38,8 +39,10 @@ const Register = () => {
   const [sendEmailVerification, verificationSending, verificationError] =
     useSendEmailVerification(auth);
 
+  const [token] = useToken(user);
+
   // Navigate
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
 

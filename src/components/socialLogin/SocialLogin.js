@@ -10,6 +10,7 @@ import {
 import auth from "../../firebase.init";
 import { useLocation, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
+import useToken from "../../hooks/useToken";
 
 const SocialLogin = () => {
   // sign in with google
@@ -23,6 +24,8 @@ const SocialLogin = () => {
   // sign in with facebook
   const [signInWithFacebook, facebookUser, facebookLoading, facebookError] =
     useSignInWithFacebook(auth);
+
+  const [token] = useToken(githubUser || facebookUser || googleUser);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -54,7 +57,7 @@ const SocialLogin = () => {
   }
 
   useEffect(() => {
-    if (googleUser || githubUser || facebookUser) {
+    if (token) {
       swal({
         title: "You are log in now!",
         text: "You clicked the button!",

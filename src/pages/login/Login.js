@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import auth from "../../firebase.init";
 import SocialLogin from "../../components/socialLogin/SocialLogin";
+import useToken from "../../hooks/useToken";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -17,6 +18,8 @@ const Login = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [token] = useToken(user);
 
   const from = location.state?.from?.pathname || "/";
 
@@ -30,7 +33,7 @@ const Login = () => {
   const email = getValues("email");
 
   // NAVIGATE
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
 

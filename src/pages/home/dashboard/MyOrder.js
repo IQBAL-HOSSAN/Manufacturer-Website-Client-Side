@@ -13,7 +13,7 @@ const MyOrder = () => {
     fetch(url).then((res) => res.json())
   );
 
-  console.log(orders);
+  // console.log(orders);
 
   if (isLoading) {
     return <h3>Loading</h3>;
@@ -34,8 +34,8 @@ const MyOrder = () => {
         </thead>
         <tbody>
           {/* <!-- row 1 --> */}
-          {orders.map((order, index) => (
-            <tr>
+          {orders?.map((order, index) => (
+            <tr key={index}>
               <td>{index + 1}</td>
               <td>
                 <div class="flex items-center space-x-3">

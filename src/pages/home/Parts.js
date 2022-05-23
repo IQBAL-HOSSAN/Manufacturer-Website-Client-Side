@@ -37,16 +37,7 @@ const Parts = () => {
               <h3 className="justify-center text-xl font-semibold card-title text-secondary">
                 {part.name}
               </h3>
-              <p>
-                {part.length > 0 ? (
-                  <span>{part[0]}</span>
-                ) : (
-                  <span className="text-red-500">No slot available</span>
-                )}
-              </p>
-              <p>
-                {part.length} {part.length > 1 ? "spaces" : "space"} available
-              </p>
+
               <span>Price:{part.price}</span>
               <div className="justify-center card-actions">
                 <button

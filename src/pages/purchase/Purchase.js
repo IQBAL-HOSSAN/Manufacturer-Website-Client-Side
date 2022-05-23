@@ -3,7 +3,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase.init";
-import { useQuery } from "react-query";
 import swal from "sweetalert";
 
 const Purchase = () => {
@@ -12,6 +11,7 @@ const Purchase = () => {
   const [user] = useAuthState(auth);
 
   const { img, name, desc, price, quantity } = part;
+  // const totalPrice = data.price * data.quantity;
 
   const {
     register,
@@ -27,8 +27,20 @@ const Purchase = () => {
   });
 
   const selectQuantity = getValues("quantity");
+  const selectPrice = getValues("price");
 
-  // console.log(selectQuantity);
+  const convertPrice = parseInt(selectPrice);
+
+  const totalPrice = price * selectQuantity;
+
+  console.log(
+    typeof totalPrice,
+    typeof selectPrice,
+    typeof convertPrice,
+    convertPrice,
+    selectPrice,
+    totalPrice
+  );
   useEffect(() => {
     fetch(`http://localhost:8000/parts/${id}`)
       .then((res) => res.json())
@@ -36,17 +48,18 @@ const Purchase = () => {
   }, []);
 
   const handleOrderBtn = (data) => {
-    // console.log(data);
+    console.log(data);
 
     const createOrder = {
       img: img,
-      part: data.productName,
+      part: data.productname,
       quantity: data.quantity,
+      price: data.price,
       name: data.name,
       address: data.address,
       email: user.email,
     };
-    // console.log(createOrder);
+    console.log(createOrder);
     fetch(`http://localhost:8000/orders`, {
       method: "POST",
       headers: {
@@ -112,7 +125,7 @@ const Purchase = () => {
                   className="w-full px-3 py-2 mt-1 rounded border"
                   value={name}
                   disabled
-                  {...register("productName", {
+                  {...register("productname", {
                     // required: "This input is required.",
                   })}
                 />
@@ -146,6 +159,20 @@ const Purchase = () => {
                     Max length exceeded
                   </p>
                 )}
+                <label
+                  className="text-gray-500  mt-5  font-semibold"
+                  htmlFor="price"
+                >
+                  Price
+                </label>
+                <input
+                  className="w-full px-3 py-2 mt-1 rounded border"
+                  value={price}
+                  type="number"
+                  {...register("price", {
+                    required: "This input is required.",
+                  })}
+                />
                 <label
                   className="text-gray-500  mt-5  font-semibold"
                   htmlFor="name"

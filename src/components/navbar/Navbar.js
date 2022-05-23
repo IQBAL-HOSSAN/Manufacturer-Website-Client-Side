@@ -33,12 +33,15 @@ const Navbar = () => {
         </li>
       )}
       {user ? (
-        <button
-          onClick={logOut}
-          className="btn btn-outline btn-primary hover:text-white"
-        >
-          Sign Out
-        </button>
+        <>
+          <li>{user?.email}</li>
+          <button
+            onClick={logOut}
+            className="btn btn-outline btn-primary hover:text-white"
+          >
+            Sign Out
+          </button>
+        </>
       ) : (
         <li>
           <Link to="/login">Login</Link>

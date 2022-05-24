@@ -16,7 +16,6 @@ const AddPart = () => {
   const email = user.email;
 
   const addPartBtn = (data) => {
-    console.log(data);
     const { img, name, price, productname, quantity } = data;
     const part = {
       img: img,

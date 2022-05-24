@@ -32,12 +32,14 @@ const Navbar = () => {
       {admin && (
         <>
           <li>
-            <Link to="/addPart">Add Part</Link>{" "}
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>{" "}
+            <Link to="/addPart">Add Part</Link>
           </li>
         </>
+      )}
+      {user && (
+        <li>
+          <Link to="/dashboard">Dashboard</Link>{" "}
+        </li>
       )}
       {user ? (
         <>

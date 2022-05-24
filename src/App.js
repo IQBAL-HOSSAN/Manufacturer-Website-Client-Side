@@ -12,6 +12,7 @@ import Users from "./pages/home/dashboard/Users";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import AddPart from "./pages/parts/AddPart";
+import Portfolio from "./pages/portfolio/Portfolio";
 import Purchase from "./pages/purchase/Purchase";
 import Register from "./pages/register/Register";
 
@@ -29,6 +30,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route
           path="/addPart"
           element={

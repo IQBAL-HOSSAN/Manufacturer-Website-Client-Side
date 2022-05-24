@@ -27,7 +27,7 @@ const Navbar = () => {
         <Link to="/contact">Contact</Link>{" "}
       </li>
       <li>
-        <Link to="/about">About</Link>{" "}
+        <Link to="/portfolio">Portfolio</Link>{" "}
       </li>
       {admin && (
         <>

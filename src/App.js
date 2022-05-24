@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import RequireAdmin from "./auth/RequireAdmin";
 import RequireAuth from "./auth/RequireAuth";
 import Navbar from "./components/navbar/Navbar";
 import AddReview from "./pages/home/dashboard/AddReview";
@@ -10,6 +11,7 @@ import Payment from "./pages/home/dashboard/Payment";
 import Users from "./pages/home/dashboard/Users";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
+import AddPart from "./pages/parts/AddPart";
 import Purchase from "./pages/purchase/Purchase";
 import Register from "./pages/register/Register";
 
@@ -19,20 +21,20 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        {/* <Route
-          path="/purchase"
-          element={
-            <RequireAuth>
-              <Purchase />
-            </RequireAuth>
-          }
-        ></Route> */}
         <Route
           path="/purchase/:id"
           element={
             <RequireAuth>
               <Purchase />
             </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/addPart"
+          element={
+            <RequireAdmin>
+              <AddPart />
+            </RequireAdmin>
           }
         ></Route>
         <Route
@@ -47,8 +49,14 @@ function App() {
           <Route path="payment/:id" element={<Payment />} />
           <Route path="addReview" element={<AddReview />} />
           <Route path="myProfile" element={<MyProfile />} />
-          <Route path="users" element={<Users />} />
-          <Route path="myProfile" element={<MyProfile />} />
+          <Route
+            path="users"
+            element={
+              <RequireAdmin>
+                <Users />
+              </RequireAdmin>
+            }
+          />
         </Route>
 
         <Route path="/login" element={<Login />}></Route>

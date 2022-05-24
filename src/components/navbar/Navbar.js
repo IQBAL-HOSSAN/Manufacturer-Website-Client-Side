@@ -2,9 +2,11 @@ import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
+import useAdmin from "../../hooks/useAdmin";
 
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   const logOut = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
@@ -27,10 +29,15 @@ const Navbar = () => {
       <li>
         <Link to="/about">About</Link>{" "}
       </li>
-      {user && (
-        <li>
-          <Link to="/dashboard">Dashboard</Link>{" "}
-        </li>
+      {admin && (
+        <>
+          <li>
+            <Link to="/addPart">Add Part</Link>{" "}
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>{" "}
+          </li>
+        </>
       )}
       {user ? (
         <>

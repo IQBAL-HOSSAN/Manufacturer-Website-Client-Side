@@ -84,12 +84,12 @@ const Purchase = () => {
     <section className="container py-20 lg:px-32">
       <div className=" grid grid-cols-1  mx-auto gap-y-8 md:gap-x-8 justify-items-center ">
         <div>
-          <div class="card  bg-base-100 shadow-xl">
+          <div className="card  bg-base-100 shadow-xl">
             <figure>
               <img height="400px" src={img} alt="Album" />
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">{name}</h2>
+            <div className="card-body">
+              <h2 className="card-title">{name}</h2>
               <p>{desc}</p>
               <p>
                 <strong>Quantity:</strong> {quantity}

@@ -1,26 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 const MyOrder = () => {
-  const [user] = useAuthState(auth);
+  const [user, Loading] = useAuthState(auth);
+  const [orders, setOrders] = useState([]);
   const email = user.email;
   const url = `http://localhost:8000/orders/${email}`;
 
-  const { data: orders, isLoading } = useQuery("order", () =>
-    fetch(url).then((res) => res.json())
-  );
+  useEffect(() => {
+    fetch(url).then((res) => res.json().then((data) => setOrders(data)));
+  }, []);
 
   // console.log(orders);
 
-  if (isLoading) {
+  if (Loading) {
     return <h3>Loading</h3>;
   }
+
+  const handleDeleteBtn = (id) => {
+    fetch(`http://localhost:8000/orders/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => data);
+  };
   return (
-    <div class="overflow-x-auto w-full">
-      <table class="table w-full">
+    <div className="overflow-x-auto w-full">
+      <table className="table w-full">
         {/* <!-- head --> */}
         <thead>
           <tr>
@@ -28,6 +41,7 @@ const MyOrder = () => {
             <th>Image</th>
             <th>Name</th>
             <th>Quantity</th>
+            <th>Price</th>
             <th>Payment</th>
             <th>Action</th>
           </tr>
@@ -38,9 +52,9 @@ const MyOrder = () => {
             <tr key={index}>
               <td>{index + 1}</td>
               <td>
-                <div class="flex items-center space-x-3">
-                  <div class="avatar">
-                    <div class="mask mask-squircle w-12 h-12">
+                <div className="flex items-center space-x-3">
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
                       <img
                         src={order.img}
                         alt="Avatar Tailwind CSS Component"
@@ -50,9 +64,10 @@ const MyOrder = () => {
                 </div>
               </td>
               <td>
-                <span class="badge badge-ghost badge-sm">{order.part}</span>
+                <span className="badge badge-ghost badge-sm">{order.part}</span>
               </td>
               <td>{order.quantity}</td>
+              <td>{order.price}</td>
               <td>
                 {order.price && !order.paid && (
                   <Link to={`payment/${order._id}`}>
@@ -63,7 +78,16 @@ const MyOrder = () => {
                   <span className="text-success">Paid</span>
                 )}
               </td>
-              <td>Delete</td>
+              <td>
+                {order.price && !order.paid && (
+                  <button
+                    onClick={() => handleDeleteBtn(order._id)}
+                    className="btn btn-xs "
+                  >
+                    Delete
+                  </button>
+                )}
+              </td>
             </tr>
           ))}
         </tbody>

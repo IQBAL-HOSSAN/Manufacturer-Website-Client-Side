@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 const useAdmin = (user) => {
   const [admin, setAdmin] = useState(false);
-  console.log(admin);
+  const [adminLoading, setAdminLoading] = useState(true);
+
   useEffect(() => {
     const email = user?.email;
-    console.log(user, email, admin);
+    // console.log(user, email, admin);
     if (user) {
       fetch(`http://localhost:8000/admin/${email}`, {
         method: "GET",
@@ -18,12 +19,12 @@ const useAdmin = (user) => {
         .then((data) => {
           const admin = data.admin;
           setAdmin(admin);
-          console.log(data);
+          setAdminLoading(false);
         });
     }
   }, [user]);
 
-  return [admin];
+  return [admin, adminLoading];
 };
 
 export default useAdmin;

@@ -26,10 +26,9 @@ const Users = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Treatment</th>
+              <th>email</th>
+              <th>Make Admin</th>
+              <th>Remove user</th>
             </tr>
           </thead>
           {users.map((user, index) => (

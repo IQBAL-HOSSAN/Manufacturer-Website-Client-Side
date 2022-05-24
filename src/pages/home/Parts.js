@@ -35,7 +35,7 @@ const Parts = () => {
             <div className="card-body">
               <img src={part.img} alt="" />
               <h3 className="justify-center text-xl font-semibold card-title text-secondary">
-                {part.name}
+                {part.part}
               </h3>
 
               <span>Price:{part.price}</span>

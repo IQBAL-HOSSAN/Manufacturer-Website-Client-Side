@@ -1,12 +1,7 @@
 import React from "react";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./Slider.css";
 
 import Slider from "react-slick";
-
-// import img1 from "../../imgs/sliderImages/slide-show1.jpg";
-// import img2 from "../../imgs/sliderImages/slide-show2.jpg";
-// import img3 from "../../imgs/sliderImages/slide-show3.jpg";
 
 const slickSlider = () => {
   const settings = {

@@ -1,14 +1,18 @@
 import React from "react";
-import Reviews from "../../components/reviews/Reviews";
+import Slider from "../../components/Slider/Slider";
 import Parts from "./Parts";
+
+import Reviews from "../../components/reviews/Reviews";
+import BusinessSummery from "../../components/businessSummery/BusinessSummery";
 
 const Home = () => {
   return (
-    <div>
-      <h2>Home</h2>
+    <main>
+      <Slider />
       <Parts />
+      <BusinessSummery />
       <Reviews />
-    </div>
+    </main>
   );
 };
 

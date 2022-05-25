@@ -1,38 +1,56 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 import auth from "../../../firebase.init";
 
 const MyOrder = () => {
   const [user, Loading] = useAuthState(auth);
-  const [orders, setOrders] = useState([]);
   const email = user.email;
   const url = `http://localhost:8000/orders/${email}`;
 
-  useEffect(() => {
-    fetch(url).then((res) => res.json().then((data) => setOrders(data)));
-  }, []);
+  const {
+    data: orders,
+    isFetching,
+    refetch,
+  } = useQuery("order", () => fetch(url).then((res) => res.json()));
 
-  // console.log(orders);
+  console.log(orders);
 
-  if (Loading) {
+  if (Loading || isFetching) {
     return <h3>Loading</h3>;
   }
 
-  const handleDeleteBtn = (id) => {
-    fetch(`http://localhost:8000/orders/${id}`, {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => data);
+  const handleDeleteBtn = async (id) => {
+    const decision = await swal({
+      title: "Are you sure want to delete this item!",
+      buttons: ["Oh noez!", true],
+    });
+    if (decision) {
+      fetch(`http://localhost:8000/orders/${id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          refetch();
+        });
+    }
   };
   return (
     <div className="overflow-x-auto w-full">
-      <table className="table w-full">
+      <h2 className="text-4xl font-bold text-center mb-3">My Orders</h2>
+      <div className="flex justify-center">
+        <div
+          style={{ background: "#e23d8a" }}
+          className="divide-y-8  h-1 w-20"
+        ></div>
+      </div>
+      <table className="table w-full mt-8">
         {/* <!-- head --> */}
         <thead>
           <tr>

@@ -17,6 +17,8 @@ import AddPart from "./pages/parts/AddPart";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Purchase from "./pages/purchase/Purchase";
 import Register from "./pages/register/Register";
+import Products from "./pages/products/Products";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/products" element={<Products />}></Route>
         <Route
           path="/purchase/:id"
           element={
@@ -66,6 +69,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

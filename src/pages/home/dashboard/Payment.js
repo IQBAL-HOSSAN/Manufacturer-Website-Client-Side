@@ -21,11 +21,17 @@ const Payment = () => {
     return <h3>Loading...</h3>;
   }
 
-  // console.log(order);
+  console.log(order);
   return (
-    <div className="mt-10 ml-20">
-      {/* <h2 className="text-2xl my-5 text-center">Payment:{orderId}</h2> */}
-      <div className=" shadow-xl card w-1/2 bg-base-100">
+    <div className="mt-10 ml-20 flex-col items-center justify-center">
+      <h2 className="text-4xl font-bold text-center mb-3">Payment</h2>
+      <div className="flex justify-center">
+        <div
+          style={{ background: "#e23d8a" }}
+          className="divide-y-8  h-1 w-20"
+        ></div>
+      </div>{" "}
+      <div className=" shadow-xl card   w-1/2 bg-base-100 justify-center mt-8">
         <div className="card-body ">
           <p className="text-xl">
             Hello sir: {order?.name ? order.name : " Sir"}

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Slider.css";
-
 import Slider from "react-slick";
 
 const slickSlider = () => {
@@ -24,13 +23,13 @@ const slickSlider = () => {
             width="100%"
           />
         </div>
-        <div>
+        {/* <div>
           <img
             src="https://www.electronics.com.bd/image/cache/catalog/banner/2022%20Banners/Front_Big_Banners/Default-resolution%20/Express-Delivery-opt-1760x880.webp"
             height="600px"
             width="100%"
           />
-        </div>
+        </div> */}
         <div>
           <img
             src="https://www.electronics.com.bd/image/cache/catalog/banner/2022%20Banners/Front_Big_Banners/Default-resolution%20/WROPO-1760x880.webp"

@@ -82,11 +82,11 @@ const Purchase = () => {
 
   return (
     <section className="container py-20 lg:px-32">
-      <div className=" grid grid-cols-1  mx-auto gap-y-8 md:gap-x-8 justify-items-center ">
+      <div className=" grid grid-cols-1  mx-auto gap-y-8 md:gap-x-8 md:grid-cols-2  lg:grid-cols-2">
         <div>
           <div className="card  bg-base-100 shadow-xl">
             <figure>
-              <img height="400px" src={img} alt="Album" />
+              <img className="h-96" src={img} alt="Album" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{name}</h2>
@@ -100,153 +100,92 @@ const Purchase = () => {
               {/* <button className="text-base text-white btn btn-primary text-bold bg-gradient-to-r from-primary to-secondary ">
                 Purchase
               </button> */}
-              <form className="" onSubmit={handleSubmit(handleOrderBtn)}>
-                <label
-                  className="text-gray-500  mt-5  font-semibold"
-                  htmlFor="img"
-                >
-                  Product Image
-                </label>
-                <input
-                  className="w-full px-3 py-2 mt-1 rounded border"
-                  value={img}
-                  disabled
-                  {...register("img", {
-                    // required: "This input is required.",
-                  })}
-                />
-                <label
-                  className="text-gray-500  mt-5  font-semibold"
-                  htmlFor="productName"
-                >
-                  Product Name
-                </label>
-                <input
-                  className="w-full px-3 py-2 mt-1 rounded border"
-                  value={name}
-                  disabled
-                  {...register("productname", {
-                    // required: "This input is required.",
-                  })}
-                />
-                <label
-                  className="text-gray-500  mt-5  font-semibold"
-                  htmlFor="quantity"
-                >
-                  Quantity
-                </label>
-                <input
-                  className="w-full px-3 py-2 mt-1 rounded border"
-                  placeholder="Min-quantity-20 & Max-quantity-100"
-                  {...register("quantity", {
-                    required: "This input is required.",
-                    max: 100,
-                    min: 20,
-                  })}
-                />
-                {errors?.quantity && (
-                  <p className="text-red-600 error-text text-start">
-                    {errors?.quantity?.message}
-                  </p>
-                )}
-                {errors?.quantity && errors?.quantity.type === "min" && (
-                  <p className="text-red-600 error-text text-start">
-                    Min length exceeded
-                  </p>
-                )}
-                {errors?.quantity && errors?.quantity.type === "max" && (
-                  <p className="text-red-600 error-text text-start">
-                    Max length exceeded
-                  </p>
-                )}
-                <label
-                  className="text-gray-500  mt-5  font-semibold"
-                  htmlFor="price"
-                >
-                  Price
-                </label>
-                <input
-                  className="w-full px-3 py-2 mt-1 rounded border"
-                  value={price}
-                  type="number"
-                  {...register("price", {
-                    required: "This input is required.",
-                  })}
-                />
-                <label
-                  className="text-gray-500  mt-5  font-semibold"
-                  htmlFor="name"
-                >
-                  Name
-                </label>
-                <input
-                  className="w-full px-3 py-2 mt-1 rounded border"
-                  placeholder="Name"
-                  id="name"
-                  {...register("name", {
-                    required: "  This is required",
-                  })}
-                />
-                {errors?.name && (
-                  <p className="text-red-600 error-text text-start">
-                    {errors?.name?.message}
-                  </p>
-                )}
-                <label
-                  className="text-gray-500  mt-5  font-semibold"
-                  htmlFor="address"
-                >
-                  Address
-                </label>
-                <input
-                  className="w-full px-3 py-2 mt-1 rounded border"
-                  placeholder="Address"
-                  id="address"
-                  {...register("address", {})}
-                />
-                <label
-                  className="text-gray-500  mt-5  font-semibold"
-                  htmlFor="email"
-                >
-                  Email address
-                </label>
-                <input
-                  className="w-full px-3 py-2 mt-1 rounded border"
-                  placeholder="Email address"
-                  value={user.email}
-                  disabled
-                  {...register("email", {
-                    // required: "This input is required.",
-                    pattern: {
-                      value: /\S+@\S+\.\S+/,
-                      message: `Please include an '@' in the email address. '' is missing an '@`,
-                    },
-                  })}
-                />
-                {errors?.email && (
-                  <p className="text-red-600 error-text text-start">
-                    {errors?.email?.message}
-                  </p>
-                )}
-                <div className="mt-5 text-center">
-                  <input
-                    // disabled={selectQuantity < 20 || selectQuantity > 100}
-                    className="text-base w-full text-white btn btn-primary text-bold bg-gradient-to-r from-primary to-secondary "
-                    type="submit"
-                    value="Purchase"
-                  />
-                </div>
-              </form>
             </div>
           </div>
         </div>
-        {/* <div className="w-full">
-          <form className="" onSubmit={handleSubmit()}>
+        <div className="w-full p-5 shadow">
+          <form className="" onSubmit={handleSubmit(handleOrderBtn)}>
+            <label className="text-gray-500  mt-5  font-semibold" htmlFor="img">
+              Product Image
+            </label>
             <input
-              className="w-full px-3 py-2 rounded border"
-              placeholder="Name"
-              {...register("name", {
+              className="w-full px-3 py-2 mt-1 rounded border"
+              value={img}
+              disabled
+              {...register("img", {
+                // required: "This input is required.",
+              })}
+            />
+            <label
+              className="text-gray-500  mt-5  font-semibold"
+              htmlFor="productName"
+            >
+              Product Name
+            </label>
+            <input
+              className="w-full px-3 py-2 mt-1 rounded border"
+              value={name}
+              disabled
+              {...register("productname", {
+                // required: "This input is required.",
+              })}
+            />
+            <label
+              className="text-gray-500  mt-5  font-semibold"
+              htmlFor="quantity"
+            >
+              Quantity
+            </label>
+            <input
+              className="w-full px-3 py-2 mt-1 rounded border"
+              placeholder="Min-quantity-20 & Max-quantity-100"
+              {...register("quantity", {
                 required: "This input is required.",
+                max: 100,
+                min: 20,
+              })}
+            />
+            {errors?.quantity && (
+              <p className="text-red-600 error-text text-start">
+                {errors?.quantity?.message}
+              </p>
+            )}
+            {errors?.quantity && errors?.quantity.type === "min" && (
+              <p className="text-red-600 error-text text-start">
+                Min length exceeded
+              </p>
+            )}
+            {errors?.quantity && errors?.quantity.type === "max" && (
+              <p className="text-red-600 error-text text-start">
+                Max length exceeded
+              </p>
+            )}
+            <label
+              className="text-gray-500  mt-5  font-semibold"
+              htmlFor="price"
+            >
+              Price
+            </label>
+            <input
+              className="w-full px-3 py-2 mt-1 rounded border"
+              value={price}
+              type="number"
+              {...register("price", {
+                required: "This input is required.",
+              })}
+            />
+            <label
+              className="text-gray-500  mt-5  font-semibold"
+              htmlFor="name"
+            >
+              Name
+            </label>
+            <input
+              className="w-full px-3 py-2 mt-1 rounded border"
+              placeholder="Name"
+              id="name"
+              {...register("name", {
+                required: "  This is required",
               })}
             />
             {errors?.name && (
@@ -254,11 +193,31 @@ const Purchase = () => {
                 {errors?.name?.message}
               </p>
             )}
+            <label
+              className="text-gray-500  mt-5  font-semibold"
+              htmlFor="address"
+            >
+              Address
+            </label>
             <input
-              className="w-full px-3 py-2 mt-5 rounded border"
+              className="w-full px-3 py-2 mt-1 rounded border"
+              placeholder="Address"
+              id="address"
+              {...register("address", {})}
+            />
+            <label
+              className="text-gray-500  mt-5  font-semibold"
+              htmlFor="email"
+            >
+              Email address
+            </label>
+            <input
+              className="w-full px-3 py-2 mt-1 rounded border"
               placeholder="Email address"
+              value={user.email}
+              disabled
               {...register("email", {
-                required: "This input is required.",
+                // required: "This input is required.",
                 pattern: {
                   value: /\S+@\S+\.\S+/,
                   message: `Please include an '@' in the email address. '' is missing an '@`,
@@ -270,28 +229,16 @@ const Purchase = () => {
                 {errors?.email?.message}
               </p>
             )}
-            <input
-              className="w-full px-3 py-2 mt-5 rounded border"
-              placeholder="Password"
-              {...register("password", {
-                required: "This input is required.",
-              })}
-            />
-            {errors?.password && (
-              <p className="text-red-600 error-text text-start">
-                {errors?.password?.message}
-              </p>
-            )}
-
             <div className="mt-5 text-center">
               <input
+                // disabled={selectQuantity < 20 || selectQuantity > 100}
                 className="text-base w-full text-white btn btn-primary text-bold bg-gradient-to-r from-primary to-secondary "
                 type="submit"
                 value="Purchase"
               />
             </div>
           </form>
-        </div> */}
+        </div>
       </div>
     </section>
   );

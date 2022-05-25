@@ -40,7 +40,7 @@ const AddReview = () => {
     <div className="mt-10 flex flex-col items-center justify-center">
       <h2 className="text-4xl ">Your opinion matters!</h2>
       <p className="text-xl">How was your experience?</p>
-      <div className=" card w-96 p-5 shadow-xl ">
+      <div className=" card w-1/2 p-5  mt-5 shadow ">
         <form className="" onSubmit={handleSubmit(addReviewBtn)}>
           <input
             className="w-full px-3 py-2 mt-1 rounded border"

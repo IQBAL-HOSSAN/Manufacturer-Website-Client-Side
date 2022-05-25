@@ -1,16 +1,16 @@
 import React from "react";
 import { BsFillFlagFill, BsPeopleFill } from "react-icons/bs";
-import { GrDeliver } from "react-icons/gr";
+import { MdDeliveryDining } from "react-icons/md";
 import { FaThumbsUp } from "react-icons/fa";
 import "./businessSummery.css";
 
 const BusinessSummery = () => {
-  const summery = [
-    { icon: BsFillFlagFill, number: 80, text: "Countries" },
-    { icon: GrDeliver, number: 600, text: "Completed Delivery" },
-    { icon: BsPeopleFill, number: 300, text: "Happy Clients" },
-    { icon: FaThumbsUp, number: 530, text: "Feedbacks" },
-  ];
+  // const summery = [
+  //   { icon: BsFillFlagFill, number: 80, text: "Countries" },
+  //   { icon: MdDeliveryDining, number: 600, text: "Completed Delivery" },
+  //   { icon: BsPeopleFill, number: 300, text: "Happy Clients" },
+  //   { icon: FaThumbsUp, number: 530, text: "Feedbacks" },
+  // ];
   return (
     <section className="py-20">
       <h2 className="text-4xl font-bold text-center">
@@ -31,31 +31,28 @@ const BusinessSummery = () => {
             <BsFillFlagFill />
           </div>
           <h3 className="text-4xl font-bold my-6">72</h3>
-          <p className="text-2xl font-bold">Countries</p>
+          <p className="text-2xl ">Countries</p>
         </div>
         <div className="w-full text-center shadow rounded p-5">
-          <div
-            style={{ color: "#fff" }}
-            className="text-primary text-6xl flex justify-center  "
-          >
-            <GrDeliver className="icon" style={{ color: "#fff" }} />
+          <div className="text-secondary text-6xl flex justify-center  ">
+            <MdDeliveryDining />
           </div>
           <h3 className="text-4xl font-bold my-6">700</h3>
-          <p className="text-2xl font-bold">Complete Delivery</p>
+          <p className="text-2xl ">Complete Delivery</p>
         </div>
         <div className="w-full text-center shadow rounded p-5">
           <div className="text-secondary text-6xl flex justify-center  ">
             <BsPeopleFill />
           </div>
           <h3 className="text-4xl font-bold my-6">500</h3>
-          <p className="text-2xl font-bold">Happy Clients</p>
+          <p className="text-2xl ">Happy Clients</p>
         </div>
         <div className="w-full text-center shadow rounded p-5">
           <div className="text-secondary text-6xl flex justify-center  ">
             <FaThumbsUp />
           </div>
           <h3 className="text-4xl font-bold my-6">679</h3>
-          <p className="text-2xl font-bold">Feedback</p>
+          <p className="text-2xl ">Feedback</p>
         </div>
       </div>
     </section>

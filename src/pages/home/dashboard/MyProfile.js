@@ -8,7 +8,6 @@ import auth from "../../../firebase.init";
 const MyProfile = () => {
   const [user, loading] = useAuthState(auth);
   const { displayName, email, photoURL, phone } = user;
-  // console.log(user);
   const {
     register,
     handleSubmit,
@@ -16,7 +15,6 @@ const MyProfile = () => {
   } = useForm();
 
   // get user  info
-
   const { data: userInfo, isLoading } = useQuery("order", () =>
     fetch(`http://localhost:8000/user/${email}`).then((res) => res.json())
   );
@@ -50,11 +48,16 @@ const MyProfile = () => {
       });
   };
 
-  // console.log(userInfo[0].phone);
-
   return (
-    <div>
-      <div className="card lg:card-side bg-base-100 shadow-xl">
+    <div className="mx-auto flex flex-col items-center justify-center">
+      <h2 className="text-4xl font-bold text-center mb-3">My Profile</h2>
+      <div className="flex justify-center mb-8">
+        <div
+          style={{ background: "#e23d8a" }}
+          className="divide-y-8  h-1 w-20"
+        ></div>
+      </div>
+      <div className="card  w-2/3 p-8 lg:card-side bg-base-100  shadow-xl">
         <figure>
           <img className="rounded-full" src={photoURL} alt="Album" />
         </figure>

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BsArrowRight } from "react-icons/bs";
 
-const Parts = () => {
+const Products = () => {
   const [parts, setParts] = useState([]);
   const navigate = useNavigate();
 
@@ -10,29 +9,16 @@ const Parts = () => {
     navigate(`/purchase/${_id}`);
   };
 
-  const allParts = (_id) => {
-    navigate(`/products`);
-  };
-
-  const maxItem = parts.slice(0, 6);
-
   useEffect(() => {
     fetch("http://localhost:8000/parts")
       .then((res) => res.json())
       .then((data) => setParts(data));
   }, []);
-
-  // useEffect(() => {
-  //   fetch(`http://localhost:8000/parts/${id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  // }, []);
-
   return (
-    <section className=" mt-20 py-20 bg-gray-100">
-      <h2 className="text-3xl font-bold text-center mb-8">Parts</h2>
+    <main className="py-20 bg-gray-50">
+      <h2 className="text-4xl font-bold text-center mb-10">All Parts</h2>{" "}
       <div className=" grid grid-cols-1  mx-auto gap-y-8 md:gap-x-8 justify-items-center lg:px-32 md:grid-cols-2 lg:grid-cols-3">
-        {maxItem.map((part) => (
+        {parts.map((part) => (
           <div
             key={part._id}
             className="text-center shadow-xl card w-96 bg-base-100"
@@ -59,17 +45,8 @@ const Parts = () => {
           </div>
         ))}
       </div>
-
-      <div className="justify-end  card-actions lg:px-40 mt-10">
-        <button
-          onClick={allParts}
-          className="text-base text-white btn btn-primary text-bold bg-gradient-to-r from-primary to-secondary "
-        >
-          More Parts <BsArrowRight className="text-2xl" />
-        </button>
-      </div>
-    </section>
+    </main>
   );
 };
 
-export default Parts;
+export default Products;

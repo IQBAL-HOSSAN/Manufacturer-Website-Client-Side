@@ -16,13 +16,13 @@ const AddPart = () => {
   const email = user.email;
 
   const addPartBtn = (data) => {
-    const { img, name, price, productname, quantity } = data;
+    const { img, supplierName, price, productname, quantity } = data;
     const part = {
       img: img,
-      part: productname,
+      name: productname,
       price: price,
       quantity: quantity,
-      name: name,
+      supplierName: supplierName,
       email: email,
     };
     fetch("http://localhost:8000/part", {
@@ -39,8 +39,8 @@ const AddPart = () => {
       });
   };
   return (
-    <div className="h-screen flex items-center justify-center">
-      <div className=" card w-96 p-5 shadow-xl ">
+    <main className="h-screen flex items-center justify-center bg-gray-100">
+      <div className=" card w-1/3 p-5 shadow-xl ">
         <form className="" onSubmit={handleSubmit(addPartBtn)}>
           <label className="text-gray-500  mt-5  font-semibold" htmlFor="img">
             Product Image
@@ -103,7 +103,7 @@ const AddPart = () => {
           <input
             className="w-full px-3 py-2 mt-1 rounded border"
             value={user?.displayName}
-            id="name"
+            id="supplierName"
             {...register("name", {
               required: "  This is required",
             })}
@@ -132,14 +132,14 @@ const AddPart = () => {
           <div className="mt-5 text-center">
             <input
               // disabled={selectQuantity < 20 || selectQuantity > 100}
-              className="text-base w-full text-white btn btn-primary text-bold bg-gradient-to-r from-primary to-secondary "
+              className="text-base w-full text-white btn btn-primary text-bold bg-gradient-to-r from-primary to-secondary"
               type="submit"
               value="Add Part"
             />
           </div>
         </form>
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -19,9 +19,8 @@ const Navbar = () => {
       <li>
         <Link to="/">Home</Link>{" "}
       </li>
-      <li>{/* <Link to="/purchase">Purchase</Link>{" "} */}</li>
       <li>
-        <Link to="/review">Review</Link>{" "}
+        <Link to="/products">Products</Link>{" "}
       </li>
       <li>
         <Link to="/contact">Contact</Link>{" "}

@@ -7,7 +7,9 @@ const CheckoutForm = ({ order }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [clientSecret, setClientSecret] = useState("");
-  // console.log(typeof price);
+  const convertPrice = parseInt(price);
+  console.log(typeof convertPrice);
+
   useEffect(() => {
     fetch("http://localhost:8000/create-payment-intent", {
       method: "POST",

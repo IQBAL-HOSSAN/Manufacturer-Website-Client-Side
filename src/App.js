@@ -23,6 +23,7 @@ import Products from "./pages/products/Products";
 import Footer from "./components/footer/Footer";
 import NotFound from "./pages/notFound/NotFound";
 import useAdmin from "./hooks/useAdmin";
+import Blog from "./pages/blog/Blog";
 
 function App() {
   const [user] = useAuthState(auth);
@@ -42,6 +43,7 @@ function App() {
           }
         ></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>
+        <Route path="/blog" element={<Blog />}></Route>
         <Route
           path="/addPart"
           element={

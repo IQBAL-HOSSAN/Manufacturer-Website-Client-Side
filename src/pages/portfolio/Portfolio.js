@@ -7,7 +7,7 @@ import Manufacture from "../../img/portfolio/manufacture.png";
 
 const Portfolio = () => {
   return (
-    <main className="lg:px-32 mx-auto ">
+    <main className="px-3  lg:px-32 mx-auto ">
       <section className="py-20">
         <h2 className="text-4xl font-bold text-center mb-3">About Me</h2>
         <div className="flex justify-center mb-20">
@@ -105,58 +105,58 @@ const Portfolio = () => {
           <div>
             <h3 className="text-3xl text-gray-400 mb-8">Skills</h3>
             <div className="mb-4">
-              <p class="font-semibold text-gray-400">HTML</p>
+              <p className="font-semibold text-gray-400">HTML</p>
               <progress
-                class="progress progress-secondary w-3/4"
+                className="progress progress-secondary w-3/4"
                 value="90"
                 max="100"
               ></progress>
               <br />
-              <p class="font-semibold text-gray-400">css</p>
+              <p className="font-semibold text-gray-400">css</p>
               <progress
-                class="progress progress-secondary  w-3/4"
+                className="progress progress-secondary  w-3/4"
                 value="80"
                 max="100"
               ></progress>
               <br />
-              <p class="font-semibold text-gray-400">Bootstrap</p>
+              <p className="font-semibold text-gray-400">Bootstrap</p>
               <progress
-                class="progress progress-secondary  w-3/4"
+                className="progress progress-secondary  w-3/4"
                 value="80"
                 max="100"
               ></progress>
               <br />
-              <p class="font-semibold text-gray-400">Tailwind Css</p>
+              <p className="font-semibold text-gray-400">Tailwind Css</p>
               <progress
-                class="progress progress-secondary  w-3/4"
+                className="progress progress-secondary  w-3/4"
                 value="70"
                 max="100"
               ></progress>{" "}
               <br />
-              <p class="font-semibold text-gray-400">Javascript</p>
+              <p className="font-semibold text-gray-400">Javascript</p>
               <progress
-                class="progress progress-secondary  w-3/4"
+                className="progress progress-secondary  w-3/4"
                 value="70"
                 max="100"
               ></progress>
               <br />
-              <p class="font-semibold text-gray-400">ReactJs</p>
+              <p className="font-semibold text-gray-400">ReactJs</p>
               <progress
-                class="progress progress-secondary  w-3/4"
+                className="progress progress-secondary  w-3/4"
                 value="90"
                 max="100"
               ></progress>
               <br />
-              <p class="font-semibold text-gray-400">Express</p>
+              <p className="font-semibold text-gray-400">Express</p>
               <progress
-                class="progress progress-secondary  w-3/4"
+                className="progress progress-secondary  w-3/4"
                 value="90"
                 max="100"
               ></progress>
               <br />
-              <p class="font-semibold text-gray-400">MongoDB</p>
+              <p className="font-semibold text-gray-400">MongoDB</p>
               <progress
-                class="progress progress-secondary  w-3/4"
+                className="progress progress-secondary  w-3/4"
                 value="70"
                 max="100"
               ></progress>
@@ -165,7 +165,7 @@ const Portfolio = () => {
         </div>
       </section>
       {/* Projects */}
-      <section className="py-20">
+      <section className="py-20 ">
         <h2 className="text-4xl font-bold text-center  mb-3">Projects</h2>
         <div className="mb-10 flex justify-center">
           <div
@@ -174,26 +174,20 @@ const Portfolio = () => {
           ></div>
         </div>
         <div className=" grid grid-cols-1   gap-y-8 md:gap-x-8 items-center justify-center md:grid-cols-2 lg:grid-cols-3">
-          <a href="https://assignment-10-lawyer.web.app/">
-            <img
-              style={{ height: "500px", width: "340px" }}
-              src={Laywer}
-              alt=""
-            />
+          <a
+            style={{ height: "500px", width: "340px" }}
+            href="https://assignment-10-lawyer.web.app/"
+          >
+            <img src={Laywer} alt="" />
           </a>
-          <a href="https://warehouse-management-f437e.web.app/">
-            <img
-              style={{ height: "500px", width: "340px" }}
-              src={WareHouse}
-              alt=""
-            />
+          <a
+            style={{ height: "500px", width: "340px" }}
+            href="https://warehouse-management-f437e.web.app/"
+          >
+            <img src={WareHouse} alt="" />
           </a>
-          <Link to="/">
-            <img
-              style={{ height: "500px", width: "340px" }}
-              src={Manufacture}
-              alt=""
-            />
+          <Link style={{ height: "500px", width: "340px" }} to="/">
+            <img src={Manufacture} alt="" />
           </Link>
         </div>
       </section>

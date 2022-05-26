@@ -23,10 +23,10 @@ const Navbar = () => {
         <Link to="/products">Products</Link>{" "}
       </li>
       <li>
-        <Link to="/contact">Contact</Link>{" "}
+        <Link to="/portfolio">Portfolio</Link>{" "}
       </li>
       <li>
-        <Link to="/portfolio">Portfolio</Link>{" "}
+        <Link to="/blog">Blog</Link>{" "}
       </li>
       {admin && (
         <>

@@ -8,24 +8,24 @@ const FrequentlyAskQuestion = () => {
         {/* question left */}
         <div className="w-full bg-white p-5 rounded-lg">
           <div
-            tabindex="0"
-            class="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
+            tabIndex="0"
+            className="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
           >
-            <div class="collapse-title text-xl font-medium">
+            <div className="collapse-title text-xl font-medium">
               Can be customized?
             </div>
-            <div class="collapse-content">
+            <div className="collapse-content">
               <p>Yes, 2D or 3D, samples are welcome.</p>
             </div>
           </div>
           <div
-            tabindex="0"
-            class="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
+            tabIndex="0"
+            className="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
           >
-            <div class="collapse-title text-xl font-medium">
+            <div className="collapse-title text-xl font-medium">
               What location are your factory in?
             </div>
-            <div class="collapse-content">
+            <div className="collapse-content">
               <p>
                 We are located in Dongguan, Guangdong, it is nearby Shenzhen
                 port.{" "}
@@ -33,13 +33,13 @@ const FrequentlyAskQuestion = () => {
             </div>
           </div>
           <div
-            tabindex="0"
-            class="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
+            tabIndex="0"
+            className="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
           >
-            <div class="collapse-title text-xl font-medium">
+            <div className="collapse-title text-xl font-medium">
               What tolerance can you meet?
             </div>
-            <div class="collapse-content">
+            <div className="collapse-content">
               <p>For the cnc turning parts: 0.001~0.005</p>
             </div>
           </div>
@@ -47,24 +47,24 @@ const FrequentlyAskQuestion = () => {
         {/* question right */}
         <div className="w-full bg-white p-5 rounded-lg">
           <div
-            tabindex="0"
-            class="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
+            tabIndex="0"
+            className="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
           >
-            <div class="collapse-title text-xl font-medium">
+            <div className="collapse-title text-xl font-medium">
               Can provide the PPAP when samples?
             </div>
-            <div class="collapse-content">
+            <div className="collapse-content">
               <p>Yes, We can </p>
             </div>
           </div>
           <div
-            tabindex="0"
-            class="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
+            tabIndex="0"
+            className="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
           >
-            <div class="collapse-title text-xl font-medium">
+            <div className="collapse-title text-xl font-medium">
               How many stamping machines do you have ?{" "}
             </div>
-            <div class="collapse-content">
+            <div className="collapse-content">
               <p>
                 Stamping machines: 35sets <br />
                 CNC turning machines: 35sets
@@ -72,13 +72,13 @@ const FrequentlyAskQuestion = () => {
             </div>
           </div>
           <div
-            tabindex="0"
-            class="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
+            tabIndex="0"
+            className="collapse collapse-arrow border-b border-b-base-300 bg-base-100 "
           >
-            <div class="collapse-title text-xl font-medium">
+            <div className="collapse-title text-xl font-medium">
               What's the nearest export port?
             </div>
-            <div class="collapse-content">
+            <div className="collapse-content">
               <p>Shenzhen port</p>
             </div>
           </div>

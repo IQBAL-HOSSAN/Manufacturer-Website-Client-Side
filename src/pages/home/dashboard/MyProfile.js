@@ -38,7 +38,7 @@ const MyProfile = () => {
     })
       .then((res) => res.json())
       .then((portfolio) => {
-        console.log(portfolio.updateUser.modifiedCount);
+        // console.log(portfolio.updateUser.modifiedCount);
         const updateUser = portfolio.updateUser.modifiedCount;
         if (updateUser) {
           swal({ title: "User Updated", icon: "success" });

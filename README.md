@@ -2,6 +2,31 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<h3> There are a list of pages of this site</h3>
+ <ul>
+ <li>Home</li>
+ <li>Products</li>
+ <li>Portfolio</li>
+ <li>Dashboard</li>
+ </ul>
+
+ <li>Home</li>
+
+fetch the products data from database and display on the home in parts section
+
+ <li>Dashboard</li>
+
+There are added some page with nested route. Such as:
+
+<ul>
+
+ <li>MyOrder</li>
+ <li>Add Review</li>
+ <li>MyProfile</li>
+</ul>
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ## Available Scripts
 
 In the project directory, you can run:

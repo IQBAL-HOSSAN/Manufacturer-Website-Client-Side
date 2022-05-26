@@ -8,7 +8,7 @@ const CheckoutForm = ({ order }) => {
   const elements = useElements();
   const [clientSecret, setClientSecret] = useState("");
   const convertPrice = parseInt(price);
-  console.log(typeof convertPrice);
+  // console.log(typeof convertPrice);
 
   useEffect(() => {
     fetch("http://localhost:8000/create-payment-intent", {
@@ -24,10 +24,10 @@ const CheckoutForm = ({ order }) => {
         if (data?.clientSecret) {
           setClientSecret(data.clientSecret);
         }
-        console.log(data);
+        // console.log(data);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, [price]);
 

@@ -19,6 +19,7 @@ import Purchase from "./pages/purchase/Purchase";
 import Register from "./pages/register/Register";
 import Products from "./pages/products/Products";
 import Footer from "./components/footer/Footer";
+import NotFound from "./pages/notFound/NotFound";
 
 function App() {
   return (
@@ -65,9 +66,9 @@ function App() {
             }
           />
         </Route>
-
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
+        <Route path="/register" element={<Register />}></Route>{" "}
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
     </div>

@@ -16,7 +16,7 @@ const MyOrder = () => {
     refetch,
   } = useQuery("order", () => fetch(url).then((res) => res.json()));
 
-  console.log(orders);
+  // console.log(orders);
 
   if (Loading || isFetching) {
     return <h3>Loading</h3>;

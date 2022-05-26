@@ -6,7 +6,7 @@ import swal from "sweetalert";
 
 const AddReview = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
+  // console.log(user);
   const { email, displayName } = user;
   const {
     register,

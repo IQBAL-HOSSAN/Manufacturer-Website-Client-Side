@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 
 const Footer = () => {
   return (
-    <footer class="footer p-10 bg-base-200 text-base-content">
+    <footer class="footer p-10 bg-base-200 text-base-content mx-auto lg:px-15">
       <div>
         <span class="footer-title">Services</span>
         <a class="link link-hover">Branding</a>

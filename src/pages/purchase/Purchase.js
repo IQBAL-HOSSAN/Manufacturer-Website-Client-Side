@@ -33,14 +33,14 @@ const Purchase = () => {
 
   const totalPrice = price * selectQuantity;
 
-  console.log(
-    typeof totalPrice,
-    typeof selectPrice,
-    typeof convertPrice,
-    convertPrice,
-    selectPrice,
-    totalPrice
-  );
+  // console.log(
+  //   typeof totalPrice,
+  //   typeof selectPrice,
+  //   typeof convertPrice,
+  //   convertPrice,
+  //   selectPrice,
+  //   totalPrice
+  // );
   useEffect(() => {
     fetch(`http://localhost:8000/parts/${id}`)
       .then((res) => res.json())
@@ -48,7 +48,7 @@ const Purchase = () => {
   }, []);
 
   const handleOrderBtn = (data) => {
-    console.log(data);
+    // console.log(data);
 
     const createOrder = {
       img: img,
@@ -69,7 +69,7 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
 
         if (data.insertedId) {
           swal({

@@ -21,7 +21,7 @@ const Payment = () => {
     return <h3>Loading...</h3>;
   }
 
-  console.log(order);
+  // console.log(order);
   return (
     <div className="mt-10 ml-20 flex-col items-center justify-center">
       <h2 className="text-4xl font-bold text-center mb-3">Payment</h2>

@@ -1,0 +1,10 @@
+.not-found-page h1{
+    color: gray;
+    font-size: 300px;
+}
+.not-found-page h2{
+    border: 5px solid rgb(221, 214, 214);
+    padding: 20px;
+    color: gray;
+    font-size: 50px;
+}

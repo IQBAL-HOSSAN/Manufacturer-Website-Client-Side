@@ -5,12 +5,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import "./businessSummery.css";
 
 const BusinessSummery = () => {
-  // const summery = [
-  //   { icon: BsFillFlagFill, number: 80, text: "Countries" },
-  //   { icon: MdDeliveryDining, number: 600, text: "Completed Delivery" },
-  //   { icon: BsPeopleFill, number: 300, text: "Happy Clients" },
-  //   { icon: FaThumbsUp, number: 530, text: "Feedbacks" },
-  // ];
+
   return (
     <section className="py-20">
       <h2 className="text-4xl font-bold text-center">

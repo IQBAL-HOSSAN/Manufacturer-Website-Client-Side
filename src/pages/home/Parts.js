@@ -17,16 +17,10 @@ const Parts = () => {
   const maxItem = parts.slice(0, 6);
 
   useEffect(() => {
-    fetch("http://localhost:8000/parts")
+    fetch("https://guarded-ocean-54362.herokuapp.com/parts")
       .then((res) => res.json())
       .then((data) => setParts(data));
   }, []);
-
-  // useEffect(() => {
-  //   fetch(`http://localhost:8000/parts/${id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  // }, []);
 
   return (
     <section className=" mt-20 py-20 bg-gray-100">

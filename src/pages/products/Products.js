@@ -10,7 +10,7 @@ const Products = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8000/parts")
+    fetch("https://guarded-ocean-54362.herokuapp.com/parts")
       .then((res) => res.json())
       .then((data) => setParts(data));
   }, []);

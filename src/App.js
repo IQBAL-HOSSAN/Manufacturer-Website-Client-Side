@@ -1,3 +1,5 @@
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./firebase.init";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import "slick-carousel/slick/slick.css";
@@ -20,8 +22,11 @@ import Register from "./pages/register/Register";
 import Products from "./pages/products/Products";
 import Footer from "./components/footer/Footer";
 import NotFound from "./pages/notFound/NotFound";
+import useAdmin from "./hooks/useAdmin";
 
 function App() {
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   return (
     <div>
       <Navbar />
@@ -53,7 +58,7 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<MyOrder />} />
+          {admin || <Route index element={<MyOrder />} />}
           <Route path="payment/:id" element={<Payment />} />
           <Route path="addReview" element={<AddReview />} />
           <Route path="myProfile" element={<MyProfile />} />

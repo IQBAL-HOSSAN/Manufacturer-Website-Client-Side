@@ -11,7 +11,7 @@ const CheckoutForm = ({ order }) => {
   // console.log(typeof convertPrice);
 
   useEffect(() => {
-    fetch("http://localhost:8000/create-payment-intent", {
+    fetch("https://guarded-ocean-54362.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -81,7 +81,7 @@ const CheckoutForm = ({ order }) => {
         name: name,
         productId: _id,
       };
-      fetch(`http://localhost:8000/order/${_id}`, {
+      fetch(`https://guarded-ocean-54362.herokuapp.com/order/${_id}`, {
         method: "PATCH",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

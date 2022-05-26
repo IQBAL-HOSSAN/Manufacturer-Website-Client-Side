@@ -25,7 +25,7 @@ const AddPart = () => {
       supplierName: supplierName,
       email: email,
     };
-    fetch("http://localhost:8000/part", {
+    fetch("https://guarded-ocean-54362.herokuapp.com/part", {
       method: "POST",
       headers: {
         "content-type": "application/json",

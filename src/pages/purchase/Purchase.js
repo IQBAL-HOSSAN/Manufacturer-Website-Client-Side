@@ -42,7 +42,7 @@ const Purchase = () => {
   //   totalPrice
   // );
   useEffect(() => {
-    fetch(`http://localhost:8000/parts/${id}`)
+    fetch(`https://guarded-ocean-54362.herokuapp.com/parts/${id}`)
       .then((res) => res.json())
       .then((data) => setPart(data));
   }, []);
@@ -60,7 +60,7 @@ const Purchase = () => {
       email: user.email,
     };
     console.log(createOrder);
-    fetch(`http://localhost:8000/orders`, {
+    fetch(`https://guarded-ocean-54362.herokuapp.com/orders`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -16,7 +16,9 @@ const MyProfile = () => {
 
   // get user  info
   const { data: userInfo, isLoading } = useQuery("order", () =>
-    fetch(`http://localhost:8000/user/${email}`).then((res) => res.json())
+    fetch(`https://guarded-ocean-54362.herokuapp.com/user/${email}`).then(
+      (res) => res.json()
+    )
   );
   if (loading || isLoading) {
     return <h3>Loading</h3>;
@@ -28,7 +30,7 @@ const MyProfile = () => {
       email: email,
       phone: phone,
     };
-    fetch(`http://localhost:8000/updateUser/${email}`, {
+    fetch(`https://guarded-ocean-54362.herokuapp.com/updateUser/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

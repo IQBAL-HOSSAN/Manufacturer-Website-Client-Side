@@ -11,7 +11,9 @@ const Users = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:8000/users").then((res) => res.json())
+    fetch("https://guarded-ocean-54362.herokuapp.com/users").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {

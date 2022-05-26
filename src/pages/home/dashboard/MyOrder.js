@@ -8,7 +8,7 @@ import auth from "../../../firebase.init";
 const MyOrder = () => {
   const [user, Loading] = useAuthState(auth);
   const email = user.email;
-  const url = `http://localhost:8000/orders/${email}`;
+  const url = `https://guarded-ocean-54362.herokuapp.com/orders/${email}`;
 
   const {
     data: orders,
@@ -16,7 +16,7 @@ const MyOrder = () => {
     refetch,
   } = useQuery("order", () => fetch(url).then((res) => res.json()));
 
-  // console.log(orders);
+  console.log(orders);
 
   if (Loading || isFetching) {
     return <h3>Loading</h3>;
@@ -28,7 +28,7 @@ const MyOrder = () => {
       buttons: ["Oh noez!", true],
     });
     if (decision) {
-      fetch(`http://localhost:8000/orders/${id}`, {
+      fetch(`https://guarded-ocean-54362.herokuapp.com/orders/${id}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",

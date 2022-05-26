@@ -23,7 +23,7 @@ const AddReview = () => {
       name: displayName,
       email: email,
     };
-    fetch("http://localhost:8000/review", {
+    fetch("https://guarded-ocean-54362.herokuapp.com/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -79,7 +79,7 @@ const AddReview = () => {
               // disabled={selectQuantity < 20 || selectQuantity > 100}
               className="text-base w-full text-white btn btn-primary text-bold bg-gradient-to-r from-primary to-secondary "
               type="submit"
-              value="Add Part"
+              value="Add Review"
             />
           </div>
         </form>
